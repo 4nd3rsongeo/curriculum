@@ -30,30 +30,8 @@ export default function TechLayout({ data }: { data: ResumeData }) {
       </section>
 
       <div className="grid grid-cols-12 gap-6 flex-1">
-        {/* Left Column - Main Tech Focus */}
+        {/* Left Column - Main History */}
         <div className="col-span-8 flex flex-col gap-6">
-          {/* Projects First - Tech Focus */}
-          <section>
-            <h2 className="text-gray-900 text-sm font-black uppercase mb-4 flex items-center gap-2">
-              <Code2 className="w-4 h-4 text-blue-600" /> Featured_Projects
-            </h2>
-            <div className="grid grid-cols-2 gap-4">
-              {data.projects.map((project, i) => (
-                <div key={i} className="border border-gray-200 p-4 rounded-lg bg-gray-50/50 break-inside-avoid">
-                  <h3 className="font-bold text-blue-700 text-sm">{project.name}</h3>
-                  <p className="text-xs text-gray-600 mt-2 leading-relaxed">{project.description}</p>
-                  <div className="flex flex-wrap gap-1 mt-3">
-                    {project.techStack?.map((tech, j) => (
-                      <span key={j} className="text-[9px] bg-white border border-blue-200 text-blue-600 px-1.5 py-0.5 rounded-sm font-mono">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
           {/* Experience */}
           <section>
             <h2 className="text-gray-900 text-sm font-black uppercase mb-4 flex items-center gap-2">
@@ -75,6 +53,47 @@ export default function TechLayout({ data }: { data: ResumeData }) {
                       </li>
                     ))}
                   </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Projects at the bottom of left column */}
+          <section className="mt-4">
+            <h2 className="text-gray-900 text-sm font-black uppercase mb-4 flex items-center gap-2">
+              <Code2 className="w-4 h-4 text-blue-600" /> FullStack_Development
+            </h2>
+            <div className="grid grid-cols-2 gap-4 mb-6">
+              {(data.tech_projects || data.projects).map((project, i) => (
+                <div key={i} className="border border-gray-200 p-4 rounded-lg bg-gray-50/50 break-inside-avoid">
+                  <h3 className="font-bold text-blue-700 text-sm">{project.name}</h3>
+                  <p className="text-xs text-gray-600 mt-2 leading-relaxed">{project.description}</p>
+                  <div className="flex flex-wrap gap-1 mt-3">
+                    {project.techStack?.map((tech, j) => (
+                      <span key={j} className="text-[9px] bg-white border border-blue-200 text-blue-600 px-1.5 py-0.5 rounded-sm font-mono">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <h2 className="text-gray-900 text-sm font-black uppercase mb-4 flex items-center gap-2">
+              <Globe className="w-4 h-4 text-emerald-600" /> resource_services
+            </h2>
+            <div className="grid grid-cols-2 gap-4">
+              {data.geo_projects?.map((project, i) => (
+                <div key={i} className="border border-gray-200 p-4 rounded-lg bg-gray-50/50 break-inside-avoid">
+                  <h3 className="font-bold text-emerald-700 text-sm">{project.name}</h3>
+                  <p className="text-xs text-gray-600 mt-2 leading-relaxed">{project.description}</p>
+                  <div className="flex flex-wrap gap-1 mt-3">
+                    {project.geoStack?.map((item, j) => (
+                      <span key={j} className="text-[9px] bg-white border border-emerald-200 text-emerald-600 px-1.5 py-0.5 rounded-sm font-mono">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>

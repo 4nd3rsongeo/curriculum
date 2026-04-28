@@ -102,21 +102,55 @@ export default function MinimalistLayout({ data }: { data: ResumeData }) {
             </div>
           </section>
 
-          {/* Technical Projects */}
-          <section>
-            <h2 className="text-lg font-bold uppercase tracking-wider text-gray-900 mb-4 border-b border-gray-200 pb-1">Technical Projects</h2>
-            <div className="flex flex-col gap-4">
-              {data.projects.map((project, i) => (
-                <div key={i} className="break-inside-avoid">
-                  <h3 className="font-bold text-sm text-gray-900">{project.name}</h3>
-                  <p className="text-xs text-gray-700 mb-1">{project.description}</p>
-                  <div className="flex flex-wrap gap-1">
-                    {project.techStack?.map((tech, j) => (
-                      <span key={j} className="text-[10px] text-blue-600 font-bold uppercase">#{tech}</span>
-                    ))}
+          {/* Geological Projects */}
+          {data.geo_projects && (
+            <section>
+              <h2 className="text-lg font-bold uppercase tracking-wider text-gray-900 mb-4 border-b border-gray-200 pb-1">Geological Projects</h2>
+              <div className="flex flex-col gap-4">
+                {data.geo_projects.map((project, i) => (
+                  <div key={i} className="break-inside-avoid">
+                    <h3 className="font-bold text-sm text-gray-900">{project.name}</h3>
+                    <p className="text-xs text-gray-700 mb-1">{project.description}</p>
+                    <div className="flex flex-wrap gap-1">
+                      {project.geoStack?.map((item, j) => (
+                        <span key={j} className="text-[10px] text-emerald-600 font-bold uppercase">#{item}</span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Technology Projects */}
+          <section>
+            <h2 className="text-lg font-bold uppercase tracking-wider text-gray-900 mb-4 border-b border-gray-200 pb-1">Technology Projects</h2>
+            <div className="flex flex-col gap-4">
+              {data.tech_projects ? (
+                data.tech_projects.map((project, i) => (
+                  <div key={i} className="break-inside-avoid">
+                    <h3 className="font-bold text-sm text-gray-900">{project.name}</h3>
+                    <p className="text-xs text-gray-700 mb-1">{project.description}</p>
+                    <div className="flex flex-wrap gap-1">
+                      {project.techStack?.map((tech, j) => (
+                        <span key={j} className="text-[10px] text-blue-600 font-bold uppercase">#{tech}</span>
+                      ))}
+                    </div>
+                  </div>
+                ))
+              ) : (
+                data.projects.map((project, i) => (
+                  <div key={i} className="break-inside-avoid">
+                    <h3 className="font-bold text-sm text-gray-900">{project.name}</h3>
+                    <p className="text-xs text-gray-700 mb-1">{project.description}</p>
+                    <div className="flex flex-wrap gap-1">
+                      {project.techStack?.map((tech, j) => (
+                        <span key={j} className="text-[10px] text-blue-600 font-bold uppercase">#{tech}</span>
+                      ))}
+                    </div>
+                  </div>
+                ))
+              )}
             </div>
           </section>
         </div>

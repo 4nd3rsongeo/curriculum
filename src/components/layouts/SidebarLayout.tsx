@@ -107,10 +107,31 @@ export default function SidebarLayout({ data }: { data: ResumeData }) {
 
           <section>
             <h2 className="text-sm font-black uppercase tracking-[0.2em] text-gray-900 mb-6 flex items-center gap-2">
-              Projects <div className="flex-1 h-px bg-gray-200"></div>
+              Geological Projects <div className="flex-1 h-px bg-gray-200"></div>
             </h2>
             <div className="flex flex-col gap-5">
-              {data.projects.map((project, i) => (
+              {data.geo_projects?.map((project, i) => (
+                <div key={i} className="break-inside-avoid">
+                  <h3 className="font-bold text-sm text-gray-900">{project.name}</h3>
+                  <p className="text-xs text-gray-600 mt-1">{project.description}</p>
+                  <div className="flex flex-wrap gap-1 mt-2">
+                    {project.geoStack?.map((item, j) => (
+                      <span key={j} className="text-[9px] bg-emerald-50 text-emerald-700 px-1.5 py-0.5 rounded font-bold uppercase">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-sm font-black uppercase tracking-[0.2em] text-gray-900 mb-6 flex items-center gap-2">
+              Technology Projects <div className="flex-1 h-px bg-gray-200"></div>
+            </h2>
+            <div className="flex flex-col gap-5">
+              {(data.tech_projects || data.projects).map((project, i) => (
                 <div key={i} className="break-inside-avoid">
                   <h3 className="font-bold text-sm text-gray-900">{project.name}</h3>
                   <p className="text-xs text-gray-600 mt-1">{project.description}</p>

@@ -88,12 +88,24 @@ export default function TimelineLayout({ data }: { data: ResumeData }) {
             </div>
           </section>
 
-          <section className="mt-auto bg-gray-50 p-6 rounded-xl border-2 border-dashed border-gray-200">
-            <h2 className="text-sm font-black uppercase mb-4">Tech Projects</h2>
+          <section className="bg-gray-50 p-6 rounded-xl border-2 border-dashed border-gray-200">
+            <h2 className="text-sm font-black uppercase mb-4">Geology Projects</h2>
             <div className="space-y-4">
-              {data.projects.map((p, i) => (
+              {data.geo_projects?.map((p, i) => (
                 <div key={i}>
-                  <h3 className="font-bold text-xs text-gray-900">{p.name}</h3>
+                  <h3 className="font-bold text-xs text-emerald-700">{p.name}</h3>
+                  <p className="text-[10px] text-gray-500 mt-1">{p.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="bg-gray-50 p-6 rounded-xl border-2 border-dashed border-gray-200">
+            <h2 className="text-sm font-black uppercase mb-4">Technology Projects</h2>
+            <div className="space-y-4">
+              {(data.tech_projects || data.projects).map((p, i) => (
+                <div key={i}>
+                  <h3 className="font-bold text-xs text-blue-700">{p.name}</h3>
                   <p className="text-[10px] text-gray-500 mt-1">{p.description}</p>
                 </div>
               ))}

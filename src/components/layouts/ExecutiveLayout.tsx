@@ -76,6 +76,26 @@ export default function ExecutiveLayout({ data }: { data: ResumeData }) {
 
           <section>
             <h2 className="text-lg font-black uppercase tracking-widest border-b border-gray-300 pb-2 mb-4 italic">
+              Strategic Project Highlights
+            </h2>
+            <div className="flex flex-col gap-4">
+              {data.geo_projects?.slice(0, 2).map((p, i) => (
+                <div key={i} className="break-inside-avoid border-l-2 border-emerald-200 pl-3">
+                  <h3 className="font-bold text-xs text-gray-900 uppercase tracking-tight">{p.name}</h3>
+                  <p className="text-[11px] text-gray-600 mt-1 leading-snug">{p.description}</p>
+                </div>
+              ))}
+              {(data.tech_projects || data.projects).slice(0, 2).map((p, i) => (
+                <div key={i} className="break-inside-avoid border-l-2 border-blue-200 pl-3">
+                  <h3 className="font-bold text-xs text-gray-900 uppercase tracking-tight">{p.name}</h3>
+                  <p className="text-[11px] text-gray-600 mt-1 leading-snug">{p.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-lg font-black uppercase tracking-widest border-b border-gray-300 pb-2 mb-4 italic">
               Linguistic Proficiency
             </h2>
             <div className="flex flex-wrap gap-x-8 gap-y-2 font-sans uppercase font-bold text-xs text-gray-600">

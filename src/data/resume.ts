@@ -33,6 +33,18 @@ export interface ResumeData {
     techStack?: string[];
     link?: string;
   }[];
+  geo_projects?: {
+    name: string;
+    description: string;
+    geoStack?: string[];
+    link?: string;
+  }[];
+  tech_projects?: {
+    name: string;
+    description: string;
+    techStack?: string[];
+    link?: string;
+  }[];
   languages: {
     name: string;
     level: string;
@@ -121,7 +133,7 @@ export const resumeData: Record<'pt' | 'en', ResumeData> = {
     skills: [
       {
         category: "Geologia",
-        items: ["Estimativa de Recursos", "JORC", "Modelagem 3D", "Geoestatística Avançada"]
+        items: ["Mapeamento Litoestrutural", "Amostragem", "Análise de Dados", "Modelagem 3D", "Estimativa de Recursos", "JORC", "Geoestatística Avançada"]
       },
       {
         category: "Tecnologia & Dev",
@@ -133,6 +145,40 @@ export const resumeData: Record<'pt' | 'en', ResumeData> = {
       }
     ],
     projects: [
+      {
+        name: "PostGIS API",
+        description: "Desenvolvimento de API para dados geolocalizados. Integração com frontend leaflet multipropósito para srrvir de base a serviços de consultoria envolvendo, estruturação de dados, consumo e dashboarding.",
+        techStack: ["Node.js", "Express", "Prisma","Next.js", "Three.js", "PostgreSQL"]
+      },
+      {
+        name: "OneBitFlix",
+        description: "Aplicação full-stack inspirada em serviços de streaming, trabalho final de conclusão de curso na OneBitCode 2025.",
+        techStack: ["Node.js", "Express", "Prisma","Next.js", "React",  "Bootstrap"]
+      }
+    ],
+    geo_projects: [
+      {
+        name: "Desenvolvimento de Modelos Geológicos de Recursos, desde definições macro da mineralização, estimativa de parâmetros/teores e Classificação de Recursos.",
+        description: "Avaliação de Recursos Minerais para bulk commodities e baseadas em conteúdo metálico também (sensíveis a volumes e teores).",
+        geoStack: ["Mapeamento Geológico", "Modelamento 3D", "Análise de Dados", "Pré Processo", "Estimativa", "Pós processo", "Classificação de Recursos"]
+      },
+      {
+        name: "Consultoria em amostragem",
+        description: "Serviços de parametrização de amostragem (massas, espaçamento, desvios padrão esperados, densidade de dados e conexão com serviços de estimativa).",
+        geoStack: ["Amostragem", "QAQC", "Preparação de amostras", "Geoestatística Básica"]
+      },
+      {
+        name: "Consultoria em modelamento de dados e integração de sistemas",
+        description: "Design de bases relacionais e não relacionais, mapeamentos de serviços no campo, otimização de redundância e segurança de informação. Minimização de paralelismos e garantias de qualidade de informação;",
+        geoStack: ["Modelamento de dados", "Gestão de serviços de aquisição", "Mecanismos de validação e controle", "Identificação de silos"]
+      },
+      {
+        name: "Consultoria em geoprocessamento",
+        description: "Serviços de consultoria em elementos construtivos geolocalizados, qualidade de modelo digital de terreno e cálculo de sensibilidades.",
+        geoStack: ["Geoprocessamento", "Validação Multiespectral", "Ciência dos Dados", "Inteligência Artificial"]
+      }
+    ],
+    tech_projects: [
       {
         name: "PostGIS API",
         description: "Desenvolvimento de API para dados geolocalizados. Integração com frontend leaflet multipropósito para srrvir de base a serviços de consultoria envolvendo, estruturação de dados, consumo e dashboarding.",
@@ -169,7 +215,7 @@ export const resumeData: Record<'pt' | 'en', ResumeData> = {
         description: "Specialized consultancy in mineral resource evaluation and development of technological solutions for mining.",
         highlights: [
           "Development of sampling projects, mine mapping, geological modeling, and estimation.",
-          "Automation projects for pre-processing, estimation, and post-processing workflows using Python and JavaScript.",
+          "Worked on automation projects for pre-processing, estimation, and post-processing workflows using Python and JavaScript.",
           "Development of RESTful APIs and responsive interfaces for complex data analysis.",
           "Technical consultancy in resource estimation and 3D geological modeling."
         ]
@@ -180,7 +226,7 @@ export const resumeData: Record<'pt' | 'en', ResumeData> = {
         period: "2012 - 2024",
         description: "Experience in world-class deposits, focusing on resource estimation, automation, and workflow improvements.",
         highlights: [
-          "Modeled and/or estimated several iron ore deposits: Conta História, Fábrica Nova, Serra Norte N4, Serra Norte N5, Manganês do Azul, Capitão do Mato, Tamanduá, Capão Xavier, Baú, and Alegria.",
+          "Modeled and/or estimated the following iron ore deposits: Conta História, Fábrica Nova, Serra Norte N4, Serra Norte N5, Manganês do Azul, Capitão do Mato, Tamanduá, Capão Xavier, Baú, and Alegria.",
           "Development of scripts and internal tools for automating modeling and reconciliation routines using Python and spatial database integration.",
           "Technical responsible for resource audits and compliance with international codes (JORC).",
           "Technical leadership in mineral resource development projects."
@@ -192,7 +238,7 @@ export const resumeData: Record<'pt' | 'en', ResumeData> = {
         period: "2011",
         description: "Training and consultancy on the Datamine Studio platform.",
         highlights: [
-          "Script development for various processes for Brazilian clients. Tool structuring via JavaScript.",
+          "Development of scripts for various processes for clients in Brazil. Structuring tools via JavaScript.",
           "Mentoring for junior and mid-level professionals."
         ]
       },
@@ -202,14 +248,14 @@ export const resumeData: Record<'pt' | 'en', ResumeData> = {
         period: "2008 - 2010",
         description: "Responsible for 3D modeling and estimations of the Viga, Esperança, Serrinha, and Santanense deposits.",
         highlights: [
-          "Modeling of mineral exploration data, experience with drilling campaigns and core shed services."
+          "Mineral exploration data modeling, experience with drilling campaigns and core shed services."
         ]
       },
       {
         title: "Mine Geologist",
         company: "Kinross Gold Corp",
         period: "2006 - 2008",
-        description: "Responsible for mine geology and short-term mining plans, 3D short-term detailing, and grade control.",
+        description: "Responsible for mine geology and short-term mining plans, responsible for short-term 3D detailing, grade control.",
         highlights: [
           "Unparalleled experience with operational unit production plans and direct dependencies on surface-exposed geology."
         ]
@@ -231,7 +277,7 @@ export const resumeData: Record<'pt' | 'en', ResumeData> = {
     skills: [
       {
         category: "Geology",
-        items: ["Resource Estimation", "JORC", "3D Modeling", "Advanced Geostatistics"]
+        items: ["Lithostructural Mapping", "Sampling", "Data Analysis", "3D Modeling", "Resource Estimation", "JORC", "Advanced Geostatistics"]
       },
       {
         category: "Tech & Dev",
@@ -245,7 +291,41 @@ export const resumeData: Record<'pt' | 'en', ResumeData> = {
     projects: [
       {
         name: "PostGIS API",
-        description: "Development of an API for geolocated data. Integration with a multi-purpose Leaflet frontend to serve as a base for consultancy services involving data structuring, consumption, and dashboarding.",
+        description: "API development for geolocated data. Integration with a multi-purpose Leaflet frontend to serve as a base for consultancy services involving data structuring, consumption, and dashboarding.",
+        techStack: ["Node.js", "Express", "Prisma", "Next.js", "Three.js", "PostgreSQL"]
+      },
+      {
+        name: "OneBitFlix",
+        description: "Full-stack application inspired by streaming services, final graduation project at OneBitCode 2025.",
+        techStack: ["Node.js", "Express", "Prisma", "Next.js", "React", "Bootstrap"]
+      }
+    ],
+    geo_projects: [
+      {
+        name: "Development of Resource Geological Models, from macro mineralization definitions to parameter/grade estimation and Resource Classification.",
+        description: "Mineral Resource Evaluation for bulk commodities and metallic content-based deposits (sensitive to volumes and grades).",
+        geoStack: ["Geological Mapping", "3D Modeling", "Data Analysis", "Pre-processing", "Estimation", "Post-processing", "Resource Classification"]
+      },
+      {
+        name: "Sampling Consultancy",
+        description: "Sampling parameterization services (masses, spacing, expected standard deviations, data density, and connection with estimation services).",
+        geoStack: ["Sampling", "QAQC", "Sample Preparation", "Basic Geostatistics"]
+      },
+      {
+        name: "Data Modeling and Systems Integration Consultancy",
+        description: "Design of relational and non-relational databases, field service mappings, redundancy optimization, and information security. Minimization of parallelisms and information quality assurance;",
+        geoStack: ["Data Modeling", "Acquisition Service Management", "Validation and Control Mechanisms", "Silo Identification"]
+      },
+      {
+        name: "Geoprocessing Consultancy",
+        description: "Consultancy services for geolocated constructive elements, digital terrain model quality, and sensitivity calculation.",
+        geoStack: ["Geoprocessing", "Multispectral Validation", "Data Science", "Artificial Intelligence"]
+      }
+    ],
+    tech_projects: [
+      {
+        name: "PostGIS API",
+        description: "API development for geolocated data. Integration with a multi-purpose Leaflet frontend to serve as a base for consultancy services involving data structuring, consumption, and dashboarding.",
         techStack: ["Node.js", "Express", "Prisma", "Next.js", "Three.js", "PostgreSQL"]
       },
       {
