@@ -62,6 +62,7 @@ export const resumeData: Record<'pt' | 'en', ResumeData> = {
       phone: "+55 (31) 99973 0101",
       linkedin: "https://www.linkedin.com/in/anderson-miyashita-7467322b/",
       github: "https://github.com/4nd3rsongeo",
+      website: "https://portfolio-inky-two-98.vercel.app/",
     },
     experience: [
       {
@@ -206,6 +207,7 @@ export const resumeData: Record<'pt' | 'en', ResumeData> = {
       phone: "+55 (31) 99973 0101",
       linkedin: "https://www.linkedin.com/in/anderson-miyashita-7467322b/",
       github: "https://github.com/4nd3rsongeo",
+      website: "https://portfolio-inky-two-98.vercel.app/",
     },
     experience: [
       {

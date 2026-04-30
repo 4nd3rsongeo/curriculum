@@ -1,5 +1,6 @@
 import { ResumeData } from "@/data/resume";
 import { Mail, Phone, Link, MapPin } from "lucide-react";
+import QRCode from "react-qr-code";
 
 export default function SidebarLayout({ data }: { data: ResumeData }) {
   return (
@@ -46,6 +47,16 @@ export default function SidebarLayout({ data }: { data: ResumeData }) {
             ))}
           </div>
         </div>
+
+        {data.profile.website && (
+          <div className="flex flex-col items-center gap-3 mt-8 pt-8 border-t border-gray-200">
+            <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-blue-600">Portfolio</h2>
+            <div className="bg-white p-2 rounded-lg shadow-sm border border-gray-100">
+              <QRCode value={data.profile.website} size={80} />
+            </div>
+            <span className="text-[8px] text-gray-400 font-bold uppercase tracking-tighter">Scan to visit</span>
+          </div>
+        )}
       </aside>
 
       {/* Main Content */}

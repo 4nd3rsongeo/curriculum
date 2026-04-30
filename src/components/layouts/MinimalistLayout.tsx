@@ -1,23 +1,34 @@
 import { ResumeData } from "@/data/resume";
 import { Mail, Phone, Link, MapPin, Globe } from "lucide-react";
+import QRCode from "react-qr-code";
 
 export default function MinimalistLayout({ data }: { data: ResumeData }) {
   return (
     <div className="p-12 h-full flex flex-col gap-8">
       {/* Header */}
-      <header className="flex flex-col gap-4 border-b-2 border-gray-100 pb-8">
-        <div>
-          <h1 className="text-4xl font-black tracking-tight text-gray-900">{data.profile.name}</h1>
-          <p className="text-xl font-medium text-blue-600 mt-1">{data.profile.role}</p>
+      <header className="flex justify-between items-start border-b-2 border-gray-100 pb-8">
+        <div className="flex flex-col gap-4">
+          <div>
+            <h1 className="text-4xl font-black tracking-tight text-gray-900">{data.profile.name}</h1>
+            <p className="text-xl font-medium text-blue-600 mt-1">{data.profile.role}</p>
+          </div>
+          
+          <div className="flex flex-wrap gap-y-2 gap-x-6 text-sm text-gray-600">
+            <ContactItem icon={<Mail className="w-4 h-4" />} text={data.profile.email} />
+            <ContactItem icon={<Phone className="w-4 h-4" />} text={data.profile.phone} />
+            <ContactItem icon={<MapPin className="w-4 h-4" />} text={data.profile.location} />
+            <ContactItem icon={<Link className="w-4 h-4" />} text={data.profile.linkedin} />
+            <ContactItem icon={<Link className="w-4 h-4" />} text={data.profile.github} />
+          </div>
         </div>
-        
-        <div className="flex flex-wrap gap-y-2 gap-x-6 text-sm text-gray-600">
-          <ContactItem icon={<Mail className="w-4 h-4" />} text={data.profile.email} />
-          <ContactItem icon={<Phone className="w-4 h-4" />} text={data.profile.phone} />
-          <ContactItem icon={<MapPin className="w-4 h-4" />} text={data.profile.location} />
-          <ContactItem icon={<Link className="w-4 h-4" />} text={data.profile.linkedin} />
-          <ContactItem icon={<Link className="w-4 h-4" />} text={data.profile.github} />
-        </div>
+        {data.profile.website && (
+          <div className="flex flex-col items-center gap-1 mt-2">
+            <div className="bg-white p-1.5 border border-gray-100 rounded shadow-sm">
+              <QRCode value={data.profile.website} size={60} />
+            </div>
+            <span className="text-[7px] font-bold text-gray-400 uppercase tracking-widest">Portfolio</span>
+          </div>
+        )}
       </header>
 
       {/* Summary */}

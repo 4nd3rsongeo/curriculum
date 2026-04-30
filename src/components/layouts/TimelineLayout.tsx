@@ -1,18 +1,29 @@
 import { ResumeData } from "@/data/resume";
 import { Briefcase, GraduationCap, Award, Zap } from "lucide-react";
+import QRCode from "react-qr-code";
 
 export default function TimelineLayout({ data }: { data: ResumeData }) {
   return (
     <div className="p-12 h-full flex flex-col gap-10">
-      <header className="flex justify-between items-end border-b-4 border-gray-800 pb-6">
+      <header className="flex justify-between items-center border-b-4 border-gray-800 pb-6">
         <div>
           <h1 className="text-5xl font-black text-gray-900 tracking-tighter">{data.profile.name}</h1>
           <p className="text-xl font-bold text-gray-400 uppercase tracking-widest mt-1">{data.profile.role}</p>
         </div>
-        <div className="text-right text-sm font-bold text-gray-600">
-          <p>{data.profile.email}</p>
-          <p>{data.profile.phone}</p>
-          <p>{data.profile.location}</p>
+        <div className="flex gap-6 items-center">
+          {data.profile.website && (
+            <div className="flex flex-col items-center gap-1">
+              <div className="bg-white p-1 border-2 border-gray-800 rounded">
+                <QRCode value={data.profile.website} size={50} />
+              </div>
+              <span className="text-[6px] font-black uppercase">Portfolio</span>
+            </div>
+          )}
+          <div className="text-right text-sm font-bold text-gray-600">
+            <p>{data.profile.email}</p>
+            <p>{data.profile.phone}</p>
+            <p>{data.profile.location}</p>
+          </div>
         </div>
       </header>
 

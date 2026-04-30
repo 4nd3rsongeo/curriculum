@@ -1,16 +1,25 @@
 import { ResumeData } from "@/data/resume";
 import { Terminal, Code2, Database, Layout as LayoutIcon, Cpu, Globe } from "lucide-react";
+import QRCode from "react-qr-code";
 
 export default function TechLayout({ data }: { data: ResumeData }) {
   return (
     <div className="p-10 h-full bg-white flex flex-col gap-6">
       {/* Header - Terminal Style */}
       <header className="bg-gray-900 text-white p-6 rounded-lg flex justify-between items-center print:bg-gray-900 print:text-white">
-        <div>
-          <h1 className="text-3xl font-mono font-bold tracking-tighter text-blue-400">
-            {"> "} {data.profile.name.toUpperCase()}
-          </h1>
-          <p className="text-gray-400 font-mono text-sm mt-1">{data.profile.role}</p>
+        <div className="flex gap-6 items-center">
+          {data.profile.website && (
+            <div className="bg-white p-1.5 rounded flex flex-col items-center gap-1">
+              <QRCode value={data.profile.website} size={50} />
+              <span className="text-[6px] text-gray-900 font-mono font-bold">PORTFOLIO</span>
+            </div>
+          )}
+          <div>
+            <h1 className="text-3xl font-mono font-bold tracking-tighter text-blue-400">
+              {"> "} {data.profile.name.toUpperCase()}
+            </h1>
+            <p className="text-gray-400 font-mono text-sm mt-1">{data.profile.role}</p>
+          </div>
         </div>
         <div className="text-right font-mono text-[10px] text-gray-500 space-y-1">
           <p>{data.profile.email}</p>

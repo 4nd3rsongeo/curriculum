@@ -1,22 +1,33 @@
 import { ResumeData } from "@/data/resume";
+import QRCode from "react-qr-code";
 
 export default function ExecutiveLayout({ data }: { data: ResumeData }) {
   return (
     <div className="p-16 h-full flex flex-col gap-10 font-serif">
       {/* Header */}
-      <header className="text-center border-b-[3px] border-gray-900 pb-8">
-        <h1 className="text-5xl font-black uppercase tracking-widest text-gray-900 mb-2">
-          {data.profile.name}
-        </h1>
-        <p className="text-lg uppercase tracking-[0.3em] text-gray-600 font-bold mb-6">
-          {data.profile.role}
-        </p>
-        <div className="flex justify-center gap-6 text-xs font-sans font-bold text-gray-500 uppercase">
-          <span>{data.profile.location}</span>
-          <span>•</span>
-          <span>{data.profile.email}</span>
-          <span>•</span>
-          <span>{data.profile.phone}</span>
+      <header className="relative border-b-[3px] border-gray-900 pb-8">
+        {data.profile.website && (
+          <div className="absolute left-0 top-0 flex flex-col items-center gap-1">
+            <div className="bg-white p-1 border border-gray-200">
+              <QRCode value={data.profile.website} size={60} />
+            </div>
+            <span className="text-[8px] font-bold text-gray-500 uppercase tracking-tighter">Portfolio</span>
+          </div>
+        )}
+        <div className="text-center">
+          <h1 className="text-5xl font-black uppercase tracking-widest text-gray-900 mb-2">
+            {data.profile.name}
+          </h1>
+          <p className="text-lg uppercase tracking-[0.3em] text-gray-600 font-bold mb-6">
+            {data.profile.role}
+          </p>
+          <div className="flex justify-center gap-6 text-xs font-sans font-bold text-gray-500 uppercase">
+            <span>{data.profile.location}</span>
+            <span>•</span>
+            <span>{data.profile.email}</span>
+            <span>•</span>
+            <span>{data.profile.phone}</span>
+          </div>
         </div>
       </header>
 
