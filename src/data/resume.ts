@@ -121,7 +121,7 @@ export const resumeData: Record<'pt' | 'en', ResumeData> = {
     ],
     education: [
       {
-        degree: "MBA em Transformação de Negócios com IA Generativa,
+        degree: "MBA em Transformação de Negócios com IA Generativa",
         institution: "Faculdade Hub",
         period: "2024 - 2027 (Em andamento)",
         description: "Foco na aplicação de Inteligência Artificial generativa para transformação de negócios e processos industriais."
