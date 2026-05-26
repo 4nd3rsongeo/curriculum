@@ -72,7 +72,7 @@ export const resumeData: Record<'pt' | 'en', ResumeData> = {
         description: "Consultoria especializada em avaliação de recursos minerais e desenvolvimento de soluções tecnológicas para mineração.",
         highlights: [   
           "Desenvolvimento de projetos de amostragem, mapeamento de mina, modelamento geológico e estimativa",       
-          "Trabalhei com projetos de automação de fluxos de processos de pre processo, estimativa e pós-processamento em python e javascript.",
+          "Desenvolvo projetos de automação de fluxos de processos de pre processo, estimativa e pós-processamento em python e javascript.",
           "Desenvolvimento de APIs RESTful e interfaces responsivas para análise de dados complexos.",
           "Consultoria técnica em estimativa de recursos e modelagem geológica 3D."
         ]
@@ -85,7 +85,7 @@ export const resumeData: Record<'pt' | 'en', ResumeData> = {
         highlights: [
           "Modelei e|ou estimei os seguintes depósitos ferrosos: Conta História, Fábrica Nova, Serra Norte N4, Serra Norte N5, Manganês do Azul, Capitão do Mato, Tamanduá, Capão Xavier, Baú e Alegria",
           "Desenvolvimento de scripts e ferramentas internas para automação de rotinas de modelagem e reconciliação, utilizando Python e integração de bancos de dados espaciais.",
-          "Responsável técnico em auditorias de recursos e conformidade com códigos internacionais (JORC).",
+          "Responsável técnico em auditorias de recursos e conformidade com códigos internacionais (JORC|SK-1300).",
           "Liderança técnica em projetos de desenvolvimento de recursos minerais."
         ]
       },
@@ -114,13 +114,14 @@ export const resumeData: Record<'pt' | 'en', ResumeData> = {
         period: "2006-2008",
         description: "Responsável por geologia de  mine e plano de lavra de curto prazo, responsável por detalhamento 3D de curto prazo, controle de teores;",
         highlights: [
-          "Experiência ímpar com plano de produção da unidade operacional e dependências diretas com a geologia exposta em superfície;"
+          "Experiência ímpar com plano de produção da unidade operacional e dependências diretas com a geologia exposta em superfície;",
+          "Responsável por modelo de Curto Prazo e controle rotineiro do plano de produção (340 000 Oz/ano)"
         ]
       }
     ],
     education: [
       {
-        degree: "MBA em Business Transformation com Generative AI",
+        degree: "MBA em Transformação de Negócios com IA Generativa,
         institution: "Faculdade Hub",
         period: "2024 - 2027 (Em andamento)",
         description: "Foco na aplicação de Inteligência Artificial generativa para transformação de negócios e processos industriais."
@@ -166,7 +167,7 @@ export const resumeData: Record<'pt' | 'en', ResumeData> = {
       {
         name: "Consultoria em amostragem",
         description: "Serviços de parametrização de amostragem (massas, espaçamento, desvios padrão esperados, densidade de dados e conexão com serviços de estimativa).",
-        geoStack: ["Amostragem", "QAQC", "Preparação de amostras", "Geoestatística Básica"]
+        geoStack: ["Amostragem", "QAQC", "Preparação de amostras", "Geoestatística Aplicada", "Design de estratégia de aquisição de dados geológicos"]
       },
       {
         name: "Consultoria em modelamento de dados e integração de sistemas",
@@ -193,7 +194,7 @@ export const resumeData: Record<'pt' | 'en', ResumeData> = {
     ],
     languages: [
       { name: "Português", level: "Nativo" },
-      { name: "Inglês", level: "Intermediário superior" },
+      { name: "Inglês", level: "Intermediário superior - 115 pontos no DET" },
       { name: "Espanhol", level: "Avançado com certificação Siele" }
     ]
   },
@@ -259,7 +260,8 @@ export const resumeData: Record<'pt' | 'en', ResumeData> = {
         period: "2006 - 2008",
         description: "Responsible for mine geology and short-term mining plans, responsible for short-term 3D detailing, grade control.",
         highlights: [
-          "Unparalleled experience with operational unit production plans and direct dependencies on surface-exposed geology."
+          "Unparalleled experience with operational unit production plans and direct dependencies on surface-exposed geology.",
+          "Responsible for short-term model and routine control of the production plan (340,000 Oz/year)"
         ]
       }
     ],
